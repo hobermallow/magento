@@ -10,14 +10,13 @@ class Login extends \Magento\Framework\App\Action\Action
 \Magento\Framework\App\Action\Context $context,
 \Magento\Customer\Model\AccountManagement $acm,
 \Magento\Customer\Model\Session $ses,
-\Magento\Framework\App\ResponseFactory $responseFactory,
-\Magento\Framework\UrlInterface $url
+\Magento\Framework\App\ResponseFactory $responseFactory
 )
   {
     $this->accountManagement = $acm;
     $this->session = $ses;
     $this->_responseFactory = $responseFactory;
-    $this->_url = $url;
+    $this->_url = $context->getUrl();
     return parent::__construct($context);
   }
 
